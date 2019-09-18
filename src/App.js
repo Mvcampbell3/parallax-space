@@ -1,20 +1,17 @@
 import React from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import Home from "./components/Home"
 
 function App() {
   return (
-    <div className="App">
-
+    <div className="App fullPage">
       <Router>
-        <header>
-          <Link to="/">Home</Link>
-          <Link to="/two">Two</Link>
-        </header>
         <Switch>
           <Route exact path="/">
-            <One />
+            <Home />
           </Route>
           <Route exact path="/two">
             <Two />
@@ -23,14 +20,6 @@ function App() {
       </Router>
     </div>
   );
-}
-
-function One() {
-  return (
-    <div>
-      One
-    </div>
-  )
 }
 
 function Two() {
