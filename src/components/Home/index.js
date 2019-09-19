@@ -18,7 +18,7 @@ const Home = (props) => {
       topBox.classList = "content mbot leave";
     }
 
-    if (bottomBoxTop <= 400) {
+    if (bottomBoxTop <= 500) {
       bottomBox.classList = "content linkBot bringStart";
     } else {
       bottomBox.classList = "content linkBot leave";
