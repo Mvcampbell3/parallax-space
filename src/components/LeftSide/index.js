@@ -90,7 +90,7 @@ const LeftSide = (props) => {
     fetch(url)
       .then(response => response.json())
       .then(pictures => {
-        console.log(pictures);
+        console.log(pictures.photos);
         setPics(pictures.photos)
       })
       .catch(err => console.log(err));
@@ -142,7 +142,7 @@ const LeftSide = (props) => {
           </div>
         </div> : null}
 
-        {props.ready ? <div className="controlBox sendBtn">
+        {ready ? <div className="controlBox sendBtn">
           <button className="btn sendBtn" onClick={getPictures}>Get Pictures</button>
         </div> : null}
       </div>

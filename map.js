@@ -1,0 +1,30 @@
+const phtoto = {
+  camera: {
+    full_name: "Front Hazard Avoidance Camera",
+    id: 27,
+    name: "FHAZ",
+    rover_id: 7,
+  },
+  earth_date: "2004-02-19",
+  id: 286907,
+  img_src: "http://mars.nasa.gov/mer/gallery/all/2/f/045/2F130352973EFF0800P1120L0M1-BR.JPG",
+  rover: {
+    cameras: [
+      { name: "FHAZ", full_name: "Front Hazard Avoidance Camera" },
+      { name: "NAVCAM", full_name: "Navigation Camera" },
+      { name: "PANCAM", full_name: "Panoramic Camera" },
+      { name: "MINITES", full_name: "Miniature Thermal Emission Spectrometer (Mini-TES)" },
+      { name: "ENTRY", full_name: "Entry, Descent, and Landing Camera" },
+      { name: "RHAZ", full_name: "Rear Hazard Avoidance Camera" },
+    ],
+    length: 6,
+  },
+  id: 7,
+  landing_date: "2004-01-04",
+  launch_date: "2003-06-10",
+  max_date: "2010-03-21",
+  max_sol: 2208,
+  name: "Spirit",
+  status: "complete",
+  total_photos: 124550,
+}

@@ -36,6 +36,7 @@ const Rovers = (props) => {
         setLoading={setLoading}
         info={info}
         flipBook={flipBook}
+        setReady={setReady}
       />
     </div>
   );
