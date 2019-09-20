@@ -4,7 +4,7 @@ import "./leftSide.css"
 
 const LeftSide = (props) => {
 
-  const { pics, loading, setPics, info, setInfo, flipBook, setFlipBook, ready, setReady, setLoading } = props;
+  const { loading, setPics, info, setInfo, flipBook, setFlipBook, ready, setReady, setLoading } = props;
 
   const [rover, setRover] = useState(null);
 
@@ -14,7 +14,7 @@ const LeftSide = (props) => {
 
   const [selectedCamera, setSelectedCamera] = useState(null);
 
-  const [getPics, setGetPics] = useState(false);
+  // const [getPics, setGetPics] = useState(false);
 
   const [manifest, setManifest] = useState(null);
 

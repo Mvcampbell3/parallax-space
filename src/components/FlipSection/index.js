@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import "./flipSection.css"
 
 const FlipSection = (props) => {
 
-  const { store } = props;
-
-  const [play, setPlay] = useState(false);
+  const { store, play, setPlay } = props;
 
   useEffect(() => {
     console.log("Ran")
@@ -14,29 +12,28 @@ const FlipSection = (props) => {
       let pos = 0;
       console.log("true")
       const pictures = [].slice.call(document.querySelectorAll(".flipPic"));
-      console.log(pictures)
-      console.log(pictures.length)
       timer = setInterval(function() {
         if (pos >= pictures.length) {
-          console.log("out")
           clearInterval(timer);
-          setPlay(false);
+          setPlay(false)
         } else {
-          console.log(pos);
-          pictures.forEach(pic => pic.style.zIndex = "5");
+          pictures.forEach(one => one.style.zIndex = "5");
           pictures[pos].style.zIndex = "10";
           pos++;
         }
-      }, 150)
-    }
+      },
+        150)
+
+
+    };
 
     return () => {
-      console.log("returning now")
-      clearInterval(timer);
-      setPlay(false)
+      console.log("return ran");
+      clearInterval(timer)
     }
 
-  }, [play, setPlay])
+  }, [play, setPlay]);
+
 
   return (
     <div className="flipSection">

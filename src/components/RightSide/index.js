@@ -7,9 +7,11 @@ import FlipSection from "../FlipSection";
 
 const RightSide = (props) => {
 
-  const { pics, loading, setLoading, info, flip, setReady } = props;
+  const { pics, loading, setLoading, info } = props;
 
   const [store, setStore] = useState([]);
+
+  const [play, setPlay] = useState(false);
 
   useEffect(() => {
     if (pics.length > 0) {
@@ -44,16 +46,21 @@ const RightSide = (props) => {
         {pics.length > 0 ?
 
           <>
-            {info ?
-              <div className="displayHolder gridCenterCenter">
-                <div className="regDisplay">
-                  {store.map((image, i) =>
-                    <InfoPic key={`image${i}`} img={image} />
-                  )}
-                </div>
-              </div>
+            {
+              info ?
 
-              : <FlipSection store={store} />}
+                <div className="displayHolder gridCenterCenter">
+                  <div className="regDisplay">
+                    {store.map((image, i) =>
+                      <InfoPic key={`image${i}`} img={image} />
+                    )}
+                  </div>
+                </div>
+
+                :
+                
+                <FlipSection store={store} play={play} setPlay={setPlay} />
+            }
           </> : <div>Landing</div>}
       </>}
     </div>
