@@ -4,7 +4,7 @@ import "./leftSide.css"
 
 const LeftSide = (props) => {
 
-  const { pics, setPics, info, setInfo, flipBook, setFlipBook, ready, setReady, setLoading } = props;
+  const { pics, loading, setPics, info, setInfo, flipBook, setFlipBook, ready, setReady, setLoading } = props;
 
   const [rover, setRover] = useState(null);
 
@@ -143,7 +143,7 @@ const LeftSide = (props) => {
         </div> : null}
 
         {ready ? <div className="controlBox sendBtn">
-          <button className="btn sendBtn" onClick={getPictures}>Get Pictures</button>
+          <button className="btn sendBtn" onClick={loading ? null: getPictures}>Get Pictures</button>
         </div> : null}
       </div>
     </div>

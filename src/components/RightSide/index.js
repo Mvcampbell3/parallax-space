@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./rightSide.css"
 
 import InfoPic from "../InfoPic";
+import FlipSection from "../FlipSection";
 
 
 const RightSide = (props) => {
@@ -19,6 +20,11 @@ const RightSide = (props) => {
         newImg.src = pic.img_src;
         newImg.id = pic.id;
         newImg.classList = "roverPic";
+        newImg.roverName = pic.rover.name;
+        newImg.cameraName = pic.camera.name;
+        newImg.cameraFullName = pic.camera.full_name;
+        newImg.earthDate = pic.earth_date;
+        newImg.sol = pic.sol;
         newImg.onload = () => {
           saved.push(newImg);
           if (saved.length === pics.length) {
@@ -35,13 +41,20 @@ const RightSide = (props) => {
   return (
     <div className="rightSide">
       {loading ? <div>Loading</div> : <>
-        {pics.length > 0 ? <div className="pictureViewer">
-          {info ? <div>
-            {store.map((pic, i) =>
-              <InfoPic img_src={pic.src} key={`pic${i}`} />
-            )}
-          </div> : <div>Flip Book</div>}
-        </div> : <div>Landing</div>}
+        {pics.length > 0 ?
+
+          <>
+            {info ?
+              <div className="displayHolder gridCenterCenter">
+                <div className="regDisplay">
+                  {store.map((image, i) =>
+                    <InfoPic key={`image${i}`} img={image} />
+                  )}
+                </div>
+              </div>
+
+              : <FlipSection store={store} />}
+          </> : <div>Landing</div>}
       </>}
     </div>
   );
