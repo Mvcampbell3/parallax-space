@@ -9,6 +9,7 @@ const FlipSection = (props) => {
     console.log("Ran")
     let timer;
     if (play) {
+      setPlay(true);
       let pos = 0;
       console.log("true")
       const pictures = [].slice.call(document.querySelectorAll(".flipPic"));
@@ -23,13 +24,12 @@ const FlipSection = (props) => {
         }
       },
         150)
-
-
     };
 
     return () => {
       console.log("return ran");
       clearInterval(timer)
+      setPlay(false);
     }
 
   }, [play, setPlay]);
