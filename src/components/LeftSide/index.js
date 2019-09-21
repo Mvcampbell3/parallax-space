@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import "./leftSide.css"
 
 const LeftSide = (props) => {
@@ -100,52 +99,70 @@ const LeftSide = (props) => {
   return (
     <div className="leftSide">
       <div className="control">
+
         <div className="controlBox">
-          <Link to="/">Back</Link>
-        </div>
-        <div className="controlBox roverSelect">
-          <label htmlFor="rover">Select Rover</label>
-          <div className="roverBtns">
-            <button
-              className={rover === "spirit" ? "btn roverBtn selected" : "btn roverbtn"}
-              onClick={() => setRover("spirit")}>
-              Spirit
-             </button>
-            <button
-              className={rover === "opportunity" ? "btn roverBtn selected" : "btn roverBtn"}
-              onClick={() => setRover("opportunity")}>
-              Opportunity
-            </button>
+          <div className="roverSelect selectDiv">
+            <label htmlFor="rover">Select Rover</label>
+            <div className="controlInside">
+              <div className="roverBtns">
+                <button
+                  className={rover === "spirit" ? "btn roverBtn selected" : "btn roverbtn"}
+                  onClick={() => setRover("spirit")}>
+                  Spirit
+                </button>
+                <button
+                  className={rover === "opportunity" ? "btn roverBtn selected" : "btn roverBtn"}
+                  onClick={() => setRover("opportunity")}>
+                  Opportunity
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        {manifest ? <div className="controlBox solSelect">
-          <label htmlFor="sol">Max Sol: {manifest.max_sol}</label>
-          <input type="number" name="sol" id="sol" placeholder="Enter Sol(Day)" autoComplete="off" value={sol}
-            onChange={(e) => handleSol(e)} />
-        </div> : null}
+        <div className="controlBox">
+          {manifest ? <div className="solSelect selectDiv">
+            <label htmlFor="sol">Max Sol: {manifest.max_sol}</label>
+            <div className="controlInside">
+              <input className="solInput" type="number" name="sol" id="sol" placeholder="Enter Sol(Day)" autoComplete="off" value={sol}
+                onChange={(e) => handleSol(e)} />
+            </div>
 
-        {cameras.length > 0 ? <div className="controlBox cameraSelect">
-          <label htmlFor="cameras">Select Camera</label>
-          <div className="cameraBtns">
-            <button className={selectedCamera === "All" ? "btn camBtn selected" : "btn camBtn"} data-camera="All" onClick={() => setSelectedCamera("All")}>All</button>
-            {cameras.map((cam, i) =>
-              <button key={i} className={selectedCamera === cam ? "btn camBtns selected" : "btn camBtn"} data-camera={cam} onClick={() => setSelectedCamera(cam)}>{cam}</button>
-            )}
-          </div>
-        </div> : null}
+          </div> : null}
+        </div>
 
-        {selectedCamera ? <div className="controlBox displaySelect">
-          <label htmlFor="display">Select Display</label>
-          <div className="displayBtns">
-            <button className={info ? "btn dispBtn selected" : "btn dispBtn"} data-display="info" onClick={(e) => setDisplay(e)}>Information</button>
-            <button className={flipBook ? "btn dispBtn selected" : "btn dispBtn"} data-display="flip" onClick={(e) => setDisplay(e)}>Flip Book</button>
-          </div>
-        </div> : null}
+        <div className="controlBox">
+          {cameras.length > 0 ? <div className="cameraSelect selectDiv">
+            <label htmlFor="cameras">Select Camera</label>
+            <div className="controlInside">
+              <div className="cameraBtns">
+                <button className={selectedCamera === "All" ? "btn camBtn selected" : "btn camBtn"} data-camera="All" onClick={() => setSelectedCamera("All")}>All</button>
+                {cameras.map((cam, i) =>
+                  <button key={i} className={selectedCamera === cam ? "btn camBtns selected" : "btn camBtn"} data-camera={cam} onClick={() => setSelectedCamera(cam)}>{cam}</button>
+                )}
+              </div>
+            </div>
+          </div> : null}
+        </div>
 
-        {ready ? <div className="controlBox sendBtn">
-          <button className="btn sendBtn" onClick={loading ? null: getPictures}>Get Pictures</button>
-        </div> : null}
+        <div className="controlBox">
+          {selectedCamera ? <div className="displaySelect selectDiv">
+            <label htmlFor="display">Select Display</label>
+            <div className="controlInside">
+              <div className="displayBtns">
+                <button className={info ? "btn dispBtn selected" : "btn dispBtn"} data-display="info" onClick={(e) => setDisplay(e)}>Information</button>
+                <button className={flipBook ? "btn dispBtn selected" : "btn dispBtn"} data-display="flip" onClick={(e) => setDisplay(e)}>Flip Book</button>
+              </div>
+
+            </div>
+          </div> : null}
+        </div>
+
+        <div className="controlBox">
+          {ready ? <div className="controlInside">
+            <button className="btn sendBtn" onClick={loading ? null : getPictures}>Get Pictures</button>
+          </div> : null}
+        </div>
       </div>
     </div>
 
