@@ -47,7 +47,7 @@ const Home = (props) => {
         </div>
 
         <div>
-          <Link to="/two" className="content leave" id="bringIn2">Explore</Link>
+          <Link to="/rover" className="content leave" id="bringIn2">Explore</Link>
         </div>
       </div>
     </div>

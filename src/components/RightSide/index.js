@@ -3,6 +3,7 @@ import "./rightSide.css"
 
 import InfoPic from "../InfoPic";
 import FlipSection from "../FlipSection";
+import Loader from "../Loader";
 
 
 const RightSide = (props) => {
@@ -10,6 +11,8 @@ const RightSide = (props) => {
   const { pics, loading, setLoading, info } = props;
 
   const [store, setStore] = useState([]);
+
+  const testLoad = true;
 
   const [play, setPlay] = useState(false);
 
@@ -42,29 +45,33 @@ const RightSide = (props) => {
 
   return (
     <div className="rightSide">
-      {loading ? <div>Loading</div> : <>
-        {pics.length > 0 ?
+      {loading ?
+        <div className="loaderPlace gridCenterCenter">
+          <Loader />
+        </div>
 
-          <>
-            {
-              info ?
+        : <>
+          {pics.length > 0 ?
+            <>
+              {
+                info ?
 
-                <div className="displayHolder gridCenterCenter">
-                  <div className="regDisplay">
-                    {store.map((image, i) =>
-                      <InfoPic key={`image${i}`} img={image} />
-                    )}
+                  <div className="displayHolder gridCenterCenter">
+                    <div className="regDisplay">
+                      {store.map((image, i) =>
+                        <InfoPic key={`image${i}`} img={image} />
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                :
+                  :
 
-                <div className="flipDisplay gridCenterCenter">
-                  <FlipSection store={store} play={play} setPlay={setPlay} />
-                </div>
-            }
-          </> : <div>Landing</div>}
-      </>}
+                  <div className="flipDisplay gridCenterCenter">
+                    <FlipSection store={store} play={play} setPlay={setPlay} />
+                  </div>
+              }
+            </> : <div>Landing</div>}
+        </>}
     </div>
   );
 }

@@ -71,11 +71,6 @@
   transform: scale(.95);
 }
 
-.btn:hover{
-  background-color: rgb(139, 44, 0);
-  color: white;
-}
-
 .selected{
   background-color: white;
   color: #333;
