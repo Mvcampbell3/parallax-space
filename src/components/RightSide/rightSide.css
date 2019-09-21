@@ -22,6 +22,19 @@
   margin-top: 1em;
 }
 
+.flipDisplay{
+  height: 100%;
+  width: 100%;
+  /* display: grid; */
+  /* place-items: center center; */
+  background: url("../../images/crater.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: luminosity;
+  background-color: rgb(18, 33, 51);
+}
+
 .infoPic{
   width: 300px;
   background-color: white;

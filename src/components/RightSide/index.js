@@ -58,8 +58,10 @@ const RightSide = (props) => {
                 </div>
 
                 :
-                
-                <FlipSection store={store} play={play} setPlay={setPlay} />
+
+                <div className="flipDisplay gridCenterCenter">
+                  <FlipSection store={store} play={play} setPlay={setPlay} />
+                </div>
             }
           </> : <div>Landing</div>}
       </>}

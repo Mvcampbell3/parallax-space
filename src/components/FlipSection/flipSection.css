@@ -1,3 +1,15 @@
+.flipSection{
+  width: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.flipPicHolder{
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
 .flipPic{
   width: 400px;
   height: auto;
@@ -6,5 +18,38 @@
 }
 
 .flipControl{
-  transform: translateY(450px)
+  padding: 3px;
+  background-color: black;
+}
+
+.flipPlay{
+  display: block;
+  width: fit-content;
+  margin: auto;
+  padding: 3px 6px;
+  border: 1px white solid;
+  border-radius: 10px;
+  background-color: darkgreen;
+  color: white;
+}
+
+.flipPlay:focus{
+  outline: none;
+}
+
+.flipPlay:active{
+  transform: scale(.95);
+}
+
+.played{
+  transform: scale(.95);
+  background-color: grey;
+}
+
+.blocker{
+  background-color: black;
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  z-index: 7;
 }

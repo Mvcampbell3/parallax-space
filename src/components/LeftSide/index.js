@@ -44,6 +44,7 @@ const LeftSide = (props) => {
     setCameras([])
     setPics([]);
     setSelectedCamera(null)
+    setManifest(null);
   }, [rover, setPics])
 
   const handleSol = (e) => {

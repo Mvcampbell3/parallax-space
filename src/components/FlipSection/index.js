@@ -37,12 +37,16 @@ const FlipSection = (props) => {
 
   return (
     <div className="flipSection">
-      {store.map((image, i) =>
-        <img src={image.src} className="flipPic" alt="rover" key={i} />
-      )}
+      <div className="flipPicHolder">
+        <div className="blocker"></div>
+        {store.map((image, i) =>
+          <img src={image.src} className="flipPic" alt="rover" key={i} />
+        )}
+      </div>
+
 
       <div className="flipControl">
-        <button className="btn flipPlay" onClick={() => setPlay(true)}>Play</button>
+        <button className={play ? "btn flipPlay played": "btn flipPlay"} onClick={play ? null : () => setPlay(true)}>Play</button>
       </div>
     </div>
   );
