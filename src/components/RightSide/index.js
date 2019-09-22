@@ -4,6 +4,7 @@ import "./rightSide.css"
 import InfoPic from "../InfoPic";
 import FlipSection from "../FlipSection";
 import Loader from "../Loader";
+import Landing from "../Landing";
 
 
 const RightSide = (props) => {
@@ -11,8 +12,6 @@ const RightSide = (props) => {
   const { pics, loading, setLoading, info } = props;
 
   const [store, setStore] = useState([]);
-
-  const testLoad = true;
 
   const [play, setPlay] = useState(false);
 
@@ -70,7 +69,7 @@ const RightSide = (props) => {
                     <FlipSection store={store} play={play} setPlay={setPlay} />
                   </div>
               }
-            </> : <div>Landing</div>}
+            </> : <div className="landingPlace gridCenterCenter"><Landing /></div>}
         </>}
     </div>
   );

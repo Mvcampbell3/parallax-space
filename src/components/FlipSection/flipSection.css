@@ -58,3 +58,15 @@
   background-color: black;
   color: white;
 }
+
+@media (max-width: 400px) {
+  .flipPic, .flipSection{
+    width: 350px;
+    height: auto;
+  }
+
+  .flipPicHolder, .blocker{
+    width: 350px;
+    height: 350px;
+  }
+}
