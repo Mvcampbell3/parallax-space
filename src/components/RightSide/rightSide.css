@@ -68,3 +68,9 @@
 .infoText{
   font-size: 11px;
 }
+
+@media (max-width: 675px) {
+  .regDisplay{
+    grid-template-columns: 300px; 
+  }
+}

@@ -76,3 +76,48 @@
   background-color: white;
   color: #333;
 }
+
+@media (max-width: 1000px) {
+  .control{
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    height: 100px;
+  }
+
+  .btn{
+    font-size: 10px;
+  }
+
+  .controlBox label{
+    font-size: 12px;
+  }
+
+  .solInput{
+    width: 80%;
+    font-size: 12px;
+    padding: 3px;
+  }
+
+  .controlBox{
+    border-left: .5px white solid;
+    border-right: .5px white solid;
+    border-bottom: none;
+  }
+
+  .roverBtns, .displayBtns{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .btn{
+    padding: 1px 2px;
+  }
+
+  .controlBox label{
+    font-size: 10px;
+    font-weight: 400;
+  }
+}

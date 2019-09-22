@@ -124,7 +124,7 @@ const LeftSide = (props) => {
           {manifest ? <div className="solSelect selectDiv">
             <label htmlFor="sol">Max Sol: {manifest.max_sol}</label>
             <div className="controlInside">
-              <input className="solInput" type="number" name="sol" id="sol" placeholder="Enter Sol(Day)" autoComplete="off" value={sol}
+              <input className="solInput" type="number" name="sol" id="sol" placeholder="Sol..." autoComplete="off" value={sol}
                 onChange={(e) => handleSol(e)} />
             </div>
 
