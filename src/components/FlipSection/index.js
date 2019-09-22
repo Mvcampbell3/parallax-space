@@ -37,6 +37,7 @@ const FlipSection = (props) => {
 
   return (
     <div className="flipSection">
+      <h4 className="text-center bg-black">Number of Images: {store.length}</h4>
       <div className="flipPicHolder">
         <div className="blocker"></div>
         {store.map((image, i) =>

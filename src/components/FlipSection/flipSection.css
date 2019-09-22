@@ -53,3 +53,8 @@
   position: absolute;
   z-index: 7;
 }
+
+.bg-black{
+  background-color: black;
+  color: white;
+}

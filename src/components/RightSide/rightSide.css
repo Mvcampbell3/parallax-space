@@ -15,8 +15,8 @@
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  background-blend-mode: difference;
-  background-color: rgb(61, 0, 0);
+  background-blend-mode: color-burn;
+  background-color: rgb(177, 153, 77);
 }
 
 .loaderPlace{
@@ -31,6 +31,7 @@
   gap: 20px;
   width: fit-content;
   margin-top: 1em;
+  padding-bottom: 150px;
 }
 
 .flipDisplay{
@@ -41,7 +42,7 @@
   background-position: center;
   background-size: cover;
   background-blend-mode: luminosity;
-  background-color: rgb(18, 33, 51);
+  background-color: rgb(50, 102, 148);
 }
 
 .infoPic{
