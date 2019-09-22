@@ -9,7 +9,7 @@ import Landing from "../Landing";
 
 const RightSide = (props) => {
 
-  const { pics, loading, setLoading, info } = props;
+  const { pics, loading, setLoading, info, initialLoad } = props;
 
   const [store, setStore] = useState([]);
 
@@ -69,7 +69,7 @@ const RightSide = (props) => {
                     <FlipSection store={store} play={play} setPlay={setPlay} />
                   </div>
               }
-            </> : <div className="landingPlace gridCenterCenter"><Landing /></div>}
+            </> : <div className="landingPlace gridCenterCenter"><Landing initialLoad={initialLoad} /></div>}
         </>}
     </div>
   );

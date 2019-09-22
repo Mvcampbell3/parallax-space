@@ -29,9 +29,11 @@
   height: 100%;
   width: 100%;
   /* background-color: dodgerblue; */
-  background: url("../../images/opportunity_selfie.jpg");
+  background: url("../../images/opportunity_track.jpg");
+  background-color: rgb(59, 22, 7);
+  background-blend-mode: color-dodge;
   background-size: cover;
-  background-position: center center;
+  background-position: left center;
 }
 
 .regDisplay{

@@ -16,6 +16,8 @@ const Rovers = (props) => {
 
   const [ready, setReady] = useState(false);
 
+  const [initialLoad, setInitialLoad] = useState(true);
+
   return (
     <div className="container">
       <LeftSide
@@ -29,6 +31,8 @@ const Rovers = (props) => {
         setInfo={setInfo}
         ready={ready}
         setReady={setReady}
+        initialLoad={initialLoad}
+        setInitialLoad={setInitialLoad}
       />
       <RightSide 
         pics={pics}
@@ -37,6 +41,7 @@ const Rovers = (props) => {
         info={info}
         flipBook={flipBook}
         setReady={setReady}
+        initialLoad={initialLoad}
       />
     </div>
   );

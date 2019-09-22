@@ -3,7 +3,7 @@ import "./leftSide.css"
 
 const LeftSide = (props) => {
 
-  const { loading, setPics, info, setInfo, flipBook, setFlipBook, ready, setReady, setLoading } = props;
+  const { loading, setPics, info, setInfo, flipBook, setFlipBook, ready, setReady, setLoading, initialLoad, setInitialLoad } = props;
 
   const [rover, setRover] = useState(null);
 
@@ -79,6 +79,9 @@ const LeftSide = (props) => {
 
   const getPictures = () => {
     setLoading(true);
+    if (initialLoad) {
+      setInitialLoad(false);
+    }
     let url;
 
     if (selectedCamera === "All") {
