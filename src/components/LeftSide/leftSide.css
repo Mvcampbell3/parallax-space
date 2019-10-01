@@ -62,6 +62,9 @@
   padding: 3px 6px;
   color: white;
   font-size: 14px;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 5px;
 }
 
 .btn:focus{
@@ -80,7 +83,7 @@
 @media (max-width: 1000px) {
   .control{
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
     height: 100px;
   }
 
@@ -99,14 +102,18 @@
   }
 
   .controlBox{
-    border-left: .5px white solid;
-    border-right: .5px white solid;
+    border-left: .25px white solid;
+    border-right: .25px white solid;
     border-bottom: none;
   }
 
   .roverBtns, .displayBtns{
     display: flex;
     flex-direction: column;
+  }
+
+  .roverBtn:nth-child(2), .dispBtn:nth-child(2){
+    margin-top: 5px;
   }
 
 }
