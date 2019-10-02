@@ -12,7 +12,11 @@ const Landing = (props) => {
 
     "Opportunity landed inside of a crater that had exposed bedrock on display. It was the first time Martian bedrock had been observed, and it gave way to many discoveries about the planet's early development.",
 
-    "Inside of the Martian bedrock found by Oppourtunity, there were very tiny little spheres everywhere. Scientists named them 'blueberries' until they run enough experiments to find out what they really were. Turns out, they are made of hematite, an iron mineral mainly formed through interactions with water."
+    "Inside of the Martian bedrock found by Oppourtunity, there were tiny little spheres everywhere. Scientists named them 'blueberries' until they run enough experiments to find out what they really were. Turns out, they are made of hematite, an iron mineral mainly formed through interactions with water.",
+
+    "Spirit and Opportunity landed near the equator because of their reliance on solar power. The energy that the solar panels generate gets less and less the further away from then Sun that they are. This is why most deep space missions, such as Cassini, are powered by radioscopic thermal generators (RTG). Curiosity, the only rover currently active on Mars, is also powered by a RTG.",
+
+    "Mars is very dusty. The solar panels on the rovers would generate less and less energy overtime because they were covered with Martian soil. Both rovers went through periods known as cleaning events, where the panels would suddenly start outputting a dramatically higher level of energy. While there are several causes of these cleaning events, one of the most interesting causes are Martian dust devils. A good example of one of these dust devils is on sol 532 of Spirit's mission."
   ]
 
   const [whichMessage, setWhichMessage] = useState(null);
